@@ -1,0 +1,18 @@
+{
+  "name": "nifty50-ml-trading-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Merged NIFTY 50 ML Trading dashboard: React/Vite frontend + FastAPI ML backend, run together with `npm run dev`.",
+  "scripts": {
+    "dev": "concurrently -n BACKEND,FRONTEND -c blue,green \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "cd backend && (if exist .venv\\Scripts\\python.exe (.venv\\Scripts\\python.exe -m uvicorn api.app:app --reload --host 0.0.0.0 --port 8000) else (python -m uvicorn api.app:app --reload --host 0.0.0.0 --port 8000))",
+    "build": "npm run build --prefix frontend",
+    "install:frontend": "npm install --prefix frontend",
+    "install:backend": "python -m pip install --upgrade pip && python -m pip install -r backend/requirements.txt",
+    "setup": "npm run install:frontend && npm run install:backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

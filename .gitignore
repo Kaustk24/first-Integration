@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/.venv/
+backend/venv/
+.venv/
+venv/
+
+# Environment & Secrets (NEVER COMMIT)
+.env
+.env.*
+*.env
+**/.env
+**/.env.*
+!**/.env.example
+
+# Token stores & Live state
+data/live/fyers_tokens.json
+backend/data/live/fyers_tokens.json
+fyers_token*.txt
+
+# Build & Dist
+dist/
+frontend/dist/
+build/
+.cache/
+.vite/
+
+# Python Cache & Testing
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS & IDE
+.DS_Store
+Thumbs.db
